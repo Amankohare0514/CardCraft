@@ -12,8 +12,8 @@ const steps = [
     { id: "girlName", label: "Dulhan's Name (Bride's Name)" },
     { id: "haldiDate", label: "Haldi Ceremony Date" },
     { id: "ganeshPujaDate", label: "Ganesh Puja Date" },
-    { id: "address", label: "Marriage Ceremony Address" },
     { id: "baratDate", label: "Barat Date" },
+    { id: "address", label: "Marriage Ceremony Address" },
 ]
 
 
