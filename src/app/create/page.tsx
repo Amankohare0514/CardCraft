@@ -8,13 +8,14 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 const steps = [
-    { id: "boyName", label: "Groom's Name" },
-    { id: "girlName", label: "Bride's Name" },
-    { id: "haldiDate", label: "Date of Haldi Ceremony" },
-    { id: "ganeshPujaDate", label: "Date of Ganesh Puja" },
+    { id: "boyName", label: "Dulha's Name (Groom's Name)" },
+    { id: "girlName", label: "Dulhan's Name (Bride's Name)" },
+    { id: "haldiDate", label: "Haldi Ceremony Date" },
+    { id: "ganeshPujaDate", label: "Ganesh Puja Date" },
     { id: "address", label: "Marriage Ceremony Address" },
-    { id: "baratDate", label: "Date of Barat" },
+    { id: "baratDate", label: "Barat Date" },
 ]
+
 
 export default function CreateInvitation() {
     const [currentStep, setCurrentStep] = useState(0)

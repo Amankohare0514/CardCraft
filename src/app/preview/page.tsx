@@ -46,9 +46,9 @@ export default function Preview() {
                     <Image
                         src="/images/hand.png"
                         alt="Praying hands"
-                        width={54}
-                        height={54}
-                        className="mb-6 opacity-90"
+                        width={60}
+                        height={60}
+                        className="mb-4 opacity-90"
                     />
 
                     {/* Main Content */}
@@ -62,7 +62,7 @@ export default function Preview() {
                             </h1>
                         </div>
 
-                        <div className="space-y-2 py-3 uppercase">
+                        <div className="space-y-2 py-2 uppercase">
                             <p className="text-3xl text-[#ffb950] ">{boyName}</p>
                             <p className="text-2xl text-[#ffb950]">&</p>
                             <p className="text-3xl text-[#ffb950] ">{girlName}</p>
@@ -71,26 +71,26 @@ export default function Preview() {
                         {/* Ceremony Details */}
                         <div className="flex items-center uppercase text-[#ffb950]  justify-center gap-4 ">
                             {/* Haldi Ceremony */}
-                            <div className="border-2  border-amber-500 px-4 py-2 rounded-xl border-dashed text-center text-lg">
-                                <h3 className="font-semibold">Haldi Ceremony</h3>
+                            <div className="border-2  border-amber-500 px-4 py-2 rounded-3xl border-dashed text-center text-sm">
+                                <h3 className="">Haldi Ceremony</h3>
                                 <p className="font-serif">{haldiDate}</p>
                             </div>
 
                             {/* Ganesh Puja */}
-                            <div className="border-2  border-amber-500 px-4 py-2 rounded-xl border-dashed text-center text-lg">
-                                <h3 className="font-semibold">Ganesh Puja</h3>
+                            <div className="border-2  border-amber-500 px-4 py-2 rounded-3xl border-dashed text-center text-sm">
+                                <h3 className="">Ganesh Puja</h3>
                                 <p className="font-serif">{ganeshPujaDate}</p>
                             </div>
 
                             {/* Barat */}
-                            <div className="border-2  border-amber-500 px-4 py-2 rounded-xl border-dashed text-center text-lg ">
-                                <h3 className="font-semibold">BARAAT & RECEPTION</h3>
+                            <div className="border-2  border-amber-500 px-4 py-2 rounded-3xl border-dashed text-center text-sm ">
+                                <h3 className="">BARAAT & RECEPTION</h3>
                                 <p className="font-serif">{baratDate}</p>
                             </div>
                         </div>
 
 
-                        <div className="py-2">
+                        <div className="">
                             <p className="text-sm text-[#ffb950] font-bold uppercase">ADDRESS</p>
                             <p className="text-lg text-[#ffb950] font-thin uppercase">{address}</p>
                         </div>
