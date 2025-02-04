@@ -42,17 +42,11 @@ function PreviewContent() {
                 <div className="absolute inset-0 bg-black/10"></div>
 
                 <div className="relative h-full w-full p-4 sm:p-6 flex flex-col items-center text-white">
-                    <Image
-                        src="/images/hand.png"
-                        alt="Praying hands"
-                        width={50}
-                        height={50}
-                        className="sm:mb-8 opacity-90"
-                    />
+                   
 
                     {/* Main Content */}
-                    <div className="text-center space-y-4 sm:space-y-6 max-w-[80%] sm:max-w-[70%]">
-                        <div className="space-y-2 text-[#ffb950] ">
+                    <div className="text-center lg:mt-32 mt-16 space-y-4 sm:space-y-6 max-w-[80%] sm:max-w-[70%]">
+                        <div className="space-y-2  text-[#ffb950] ">
                             <h2 className="text-xs sm:text-lg font-thin tracking-[0.2em]">
                                 YOU ARE KINDLY INVITED TO THE
                             </h2>
@@ -90,7 +84,7 @@ function PreviewContent() {
 
                         <div className="mt-3 sm:mt-6">
                             <p className="text-xs sm:text-sm text-[#ffb950] font-bold uppercase">ADDRESS</p>
-                            <p className="text-xs sm:text-lg text-[#ffb950] font-thin uppercase">{address}</p>
+                            <p className="text-xs sm:text-lg text-white font-thin uppercase">{address}</p>
                         </div>
                     </div>
                 </div>
