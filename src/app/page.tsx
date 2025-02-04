@@ -1,101 +1,152 @@
-import Image from "next/image";
+'use client'
+
+import Link from 'next/link'
+import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
+import { Card, CardContent } from "@/components/ui/card"
+import { HeartIcon, ScrollText, Download, Calendar } from 'lucide-react'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  
+  const features = [
+    {
+      icon: <ScrollText className="w-6 h-6" />,
+      title: "Easy Information Input",
+      description: "Simple step-by-step form to collect all ceremony details"
+    },
+    {
+      icon: <Calendar className="w-6 h-6" />,
+      title: "Multiple Ceremonies",
+      description: "Include dates for Haldi, Ganesh Puja, and Barat ceremonies"
+    },
+    {
+      icon: <Download className="w-6 h-6" />,
+      title: "Instant Download",
+      description: "Get your beautifully designed invitation card instantly"
+    }
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-red-800 via-amber-900 to-amber-800">
+      {/* Decorative Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+                fontSize: `${Math.random() * 20 + 10}px`,
+              }}
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ 
+                opacity: [0.3, 1, 0.3], 
+                scale: [1, 1.2, 1],
+                rotate: [0, 360]
+              }}
+              transition={{
+                duration: Math.random() * 5 + 5,
+                repeat: Infinity,
+                delay: Math.random() * 5,
+              }}
+            >
+              ?
+            </motion.div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+      </div>
+
+      {/* Main Content */}
+      <div className="relative container mx-auto px-4 py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          <h1 className="text-5xl md:text-6xl font-serif text-amber-100 mb-6">
+            Create Your Perfect
+            <br />
+            <span className="text-amber-500">Wedding Invitation</span>
+          </h1>
+          <p className="text-xl text-amber-200/80 max-w-2xl mx-auto">
+            Design elegant, traditional Indian wedding invitations in minutes. 
+            Perfect for sharing your special moments with loved ones.
+          </p>
+        </motion.div>
+
+        {/* Features */}
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="grid md:grid-cols-3 gap-8 mb-16"
         >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+            >
+              <Card className="bg-white/10 border-amber-500/20 backdrop-blur-sm">
+                <CardContent className="p-6 text-center">
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-12 h-12 rounded-full bg-amber-500 text-amber-950 flex items-center justify-center mx-auto mb-4"
+                  >
+                    {feature.icon}
+                  </motion.div>
+                  <h3 className="text-xl font-semibold text-amber-100 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-amber-200/70">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="text-center"
         >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+          <Link href="/create">
+            <Button
+              size="lg"
+              className="bg-amber-500 hover:bg-amber-600 text-amber-950 px-8 py-6 text-lg rounded-full transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-amber-500/20"
+            >
+              <HeartIcon className="mr-2 h-5 w-5" />
+              Create Your Invitation Free
+            </Button>
+          </Link>
+        </motion.div>
+
+        {/* Preview Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="mt-16 flex justify-center"
+        >
+          <Card className="w-full max-w-md transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+            <CardContent className="p-0">
+              <img 
+                src="/images/test.png"
+                alt="Wedding Invitation Preview"
+                className="w-full h-auto rounded-lg shadow-2xl"
+              />
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+    </main>
+  )
 }
