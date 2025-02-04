@@ -84,7 +84,7 @@ function PreviewContent() {
 
                         <div className="mt-3 sm:mt-6">
                             <p className="text-xs sm:text-sm text-[#ffb950] font-bold uppercase">ADDRESS</p>
-                            <p className="text-xs sm:text-lg text-white font-thin uppercase">{address}</p>
+                            <p className="text-xs sm:text-lg text-[#ffb950] font-bold uppercase">{address}</p>
                         </div>
                     </div>
                 </div>
